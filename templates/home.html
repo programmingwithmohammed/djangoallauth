@@ -1,0 +1,16 @@
+{% load socialaccount %}
+
+<h1>Allauth Tutorial</h1>
+
+{% if user.is_authenticated %}
+
+<p> Welcome {{ user.username }}</p>
+
+{% else %}
+
+<a href="{% provider_login_url 'github' %}">GitHub Signup</a>
+<br>
+<a href="{% provider_login_url 'google' %}">Google SignUp</a>
+ 
+
+{% endif %}
